@@ -1,0 +1,21 @@
+{
+  "name": "booknote_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "sequelize": "^5.14.0",
+    "sequelize-auto": "^0.4.29",
+    "sql-template-strings": "^2.2.2",
+    "sqlite": "^3.0.3",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
