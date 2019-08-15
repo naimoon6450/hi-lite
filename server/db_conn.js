@@ -1,9 +1,15 @@
 const sqlite = require('sqlite');
 
-const dbInstances = [
-  sqlite.open('../../AEAnnotation/AEAnnotation_v10312011_1727_local.sqlite'),
-  sqlite.open('../../BKSeriesDatabase/BKLibrary-1-091020131601.sqlite')
-];
+const macPathAnnotation =
+  '/Users/admin/Library/Containers/com.apple.iBooksX/Data/Documents/AEAnnotation/AEAnnotation_v10312011_1727_local.sqlite';
+const macPathBooks =
+  '/Users/admin/Library/Containers/com.apple.iBooksX/Data/Documents/BKSeriesDatabase/BKSeries-1-012820141020.sqlite';
+// stored locally in Windows
+// const winPathAnnotation =
+//   '../../AEAnnotation/AEAnnotation_v10312011_1727_local.sqlite';
+// const winPathBooks = './../BKSeriesDatabase/BKLibrary-1-091020131601.sqlite';
+
+const dbInstances = [sqlite.open(macPathAnnotation), sqlite.open(macPathBooks)];
 
 const db_conn = () => {
   return Promise.all(dbInstances)

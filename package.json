@@ -1,20 +1,23 @@
 {
-  "name": "booknote_app",
+  "name": "ibook_stkthn_app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.1",
-    "sequelize": "^5.14.0",
+    "sequelize": "^5.15.0",
     "sequelize-auto": "^0.4.29",
     "sql-template-strings": "^2.2.2",
     "sqlite": "^3.0.3",
     "sqlite3": "^4.0.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "typescript": "^3.5.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "./node_modules/.bin/tsc",
+    "start": "nodemon ./build/index.js"
   },
   "author": "",
   "license": "ISC"
