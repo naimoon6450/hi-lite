@@ -2,7 +2,7 @@
   "name": "ibook_stkthn_app",
   "version": "1.0.0",
   "description": "",
-  "main": "build/index",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
     "sequelize": "^5.15.0",
@@ -16,8 +16,7 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "tsc": "./node_modules/.bin/tsc",
-    "start": "nodemon ./build/index.js"
+    "start": "nodemon ./server/index.js"
   },
   "author": "",
   "license": "ISC"
