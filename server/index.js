@@ -6,7 +6,7 @@ const path = require('path');
 const { annotRouter, bookRouter } = require('./api');
 const db = require('./db_conn');
 
-app.use(express.json);
+app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
