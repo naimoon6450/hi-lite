@@ -1,2 +1,5 @@
-.DS_STORE
 node_modules
+.DS_Store
+npm-debug.log
+public/bundle.js
+public/bundle.js.map

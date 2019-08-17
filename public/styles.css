@@ -1,0 +1,200 @@
+#main {
+  margin: 2em;
+}
+
+.particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  /* z-index: -1; */
+}
+
+.navbar {
+  background-color: #080;
+  opacity: 0.6;
+  width: 100%;
+  animation: changeColour 10s ease-in 2s infinite;
+}
+
+@keyframes changeColour {
+  0%,
+  15% {
+    background-color: #080;
+  }
+  16%,
+  30% {
+    background-color: #f98a01;
+  }
+  31%,
+  45% {
+    background-color: #c61f83;
+  }
+  46%,
+  60% {
+    background-color: #de9914;
+  }
+  61%,
+  75% {
+    background-color: #1eb6dc;
+  }
+  76%,
+  90% {
+    background-color: #0060a1;
+  }
+  91%,
+  100% {
+    background-color: #080;
+  }
+}
+
+.slider-wrapper {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* To change size of slider
+  Need to change overall height of .slider
+  of .slider div 
+  and the animations accordingly
+*/
+
+.slider {
+  height: 35px;
+  padding-left: 1em;
+  overflow: hidden;
+}
+.slider-text1 {
+  animation: slide 5s ease-in-out 2s infinite;
+}
+
+.slider div {
+  color: #fff;
+  height: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@keyframes slide {
+  0% {
+    margin-top: -192px;
+  }
+  5% {
+    margin-top: -128px;
+  } /* 5% delay */
+  33% {
+    margin-top: -128px;
+  }
+  38% {
+    margin-top: -64px;
+  } /* 5% delay */
+  66% {
+    margin-top: -64px;
+  }
+  71% {
+    margin-top: 0px;
+  } /* 5% delay */
+  100% {
+    margin-top: 0px;
+  }
+}
+
+/* animation for loader */
+.loader {
+  height: 20px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 200px auto 0 auto;
+}
+.loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 20px;
+  width: 20px;
+  /* border-radius: 50%; */
+  background-color: black;
+  position: absolute;
+  /*border: 2px solid white;*/
+}
+.loader--dot:first-child {
+  background-color: #8cc759;
+  animation-delay: 0.5s;
+}
+.loader--dot:nth-child(2) {
+  background-color: #8c6daf;
+  animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+  background-color: #ef5d74;
+  animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+  background-color: #f9a74b;
+  animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+  background-color: #60beeb;
+  animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+  background-color: #fbef5a;
+  animation-delay: 0s;
+}
+.loader--text {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  right: 0;
+  /* width: 4rem; */
+  margin: auto;
+  text-align: center;
+}
+.loader--text:after {
+  content: 'Fetching your highlights';
+  color: #c61f83;
+  font-weight: bold;
+  animation-name: loading-text;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+    border-radius: 50% 0 50% 0;
+  }
+  45% {
+    transform: translateX(280px);
+    border-radius: 50% 0 50% 0;
+  }
+  65% {
+    transform: translateX(280px);
+    border-radius: 0 50% 0 50%;
+  }
+  95% {
+    transform: translateX(0);
+    border-radius: 0 50% 0 50%;
+  }
+}
+
+/* for react component transitions */
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+/* modal */

@@ -6,12 +6,12 @@ const path = require('path');
 const { annotRouter, bookRouter } = require('./api');
 const db = require('./db_conn');
 
-app.use(express.json);
+app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/api', annotRouter);
-app.use('/api', bookRouter);
+// app.use('/api', bookRouter);
 
 // send index.html
 app.use('*', (req, res, next) => {
