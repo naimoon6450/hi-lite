@@ -27,7 +27,7 @@ export const fetchHighlights = () => {
       .then(({ data }) => {
         setTimeout(() => {
           dispatch(getHighlights(data));
-        }, 1000);
+        }, 5500);
       })
       .catch(error => console.error(error));
   };
