@@ -5,15 +5,9 @@ import { fetchHighlights } from '../redux/store';
 import Loader from './Loader';
 import SHFunctional from './SHFunctional';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import axios from 'axios';
 
 class AllHighlights extends React.Component {
-  componentDidMount() {
-    this.props.fetchHighlights();
-    this.toggleClass = this.toggleClass.bind(this);
-  }
-
-  toggleClass() {}
-
   render() {
     const { fetching, highlights, toggleClass } = this.props;
     return (
@@ -25,7 +19,7 @@ class AllHighlights extends React.Component {
             <Grid
               container
               spacing={10}
-              justify="center"
+              justify='center'
               style={{ position: 'absolute' }}
             >
               {highlights.map((highlight, ind) => {
@@ -35,7 +29,7 @@ class AllHighlights extends React.Component {
                     appear={true}
                     timeout={600}
                     key={highlight.primary_key}
-                    classNames="fade"
+                    classNames='fade'
                   >
                     <SHFunctional
                       // potentially get the book cover from google api?
@@ -59,13 +53,13 @@ class AllHighlights extends React.Component {
 const mapStateToProps = state => {
   return {
     highlights: state.joinedHighlights,
-    fetching: state.isFetching,
+    fetching: state.isFetching
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchHighlights: () => dispatch(fetchHighlights()),
+    fetchHighlights: () => dispatch(fetchHighlights())
   };
 };
 
