@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import { fetchSingleHighlight } from '../redux/store';
 
 const styles = makeStyles({
   root: {
@@ -32,22 +33,11 @@ const styles = makeStyles({
 const CoverFunctional = props => {
   const classes = styles();
   const { imageUrl } = props;
+
   return (
     // <Link to={ modal? } style={{ textDecoration: 'none' }}>
     <Grid item xs={6}>
       <Card className={classes.root}>
-        <Grid container>
-          {/* <CardHeader
-            title={title}
-            subheader={author}
-            className={classes.grow}
-          />
-          <CardHeader
-            subheader={`To reVisit: ${
-              chapter && chapter.toLowerCase().includes('ch') ? chapter : 'N/A'
-            }`}
-          /> */}
-        </Grid>
         <CardMedia image={imageUrl} className={classes.media} />
         {/* <CardContent>
           <Typography variant='h6'>Selected Text</Typography>

@@ -8,6 +8,7 @@ const GET_HIGHLIGHTS = 'GET_HIGHLIGHTS';
 const GET_FAILURE = 'GET_FAILURE';
 const HIGHLIGHT_REQUEST = 'HIGHLIGHT_REQUEST';
 const GET_BOOK_COVERS = 'GET_BOOK_COVERS';
+const GET_SPECIFIC_HIGHLIGHT = 'GET_SPECIFIC_HIGHLIGHT';
 
 // for loading ability
 const fetchingHighlightData = () => ({
@@ -19,11 +20,23 @@ const getHighlights = highlights => ({
   highlights
 });
 
+const getSpecificHighlight = title => ({
+  type: GET_SPECIFIC_HIGHLIGHT,
+  title
+});
+
 const getBookCovers = bookCovers => ({
   type: GET_BOOK_COVERS,
   bookCovers
 });
 
+export const fetchSingleHighlight = title => {
+  return dispatch => {
+    axios.get(`/api/highlights/${title}`).then(({ data }) => {
+      console.log(data);
+    });
+  };
+};
 // higlight fetching thunk
 export const fetchHighlights = () => {
   return dispatch => {
@@ -64,6 +77,7 @@ export const fetchHighlights = () => {
 
 let initialState = {
   joinedHighlights: [],
+  specificHighlights: [],
   bookCovers: {},
   isFetching: false
 };

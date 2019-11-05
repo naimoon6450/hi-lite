@@ -8,6 +8,7 @@ const AllCovers = props => {
   const { bookCovers } = props;
   //   console.log(Object.keys(bookCovers));
   //   return <div>Hi</div>;
+
   return Object.keys(bookCovers).length ? (
     <div>
       <Grid

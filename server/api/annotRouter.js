@@ -31,6 +31,30 @@ annnotRouter.get('/highlights', (req, res, next) => {
     });
 });
 
+// /api/highlights/:title
+annnotRouter.get('/single-hl/:title', (req, res, next) => {
+  db()
+    .then(([annotDb, bookDb]) => {
+      annotDb
+        .all(joinQuery)
+        .then(result => {
+          res.json(
+            result.filter(elem => {
+              if (elem.title === req.params.title) return elem;
+            })
+          );
+        })
+        .catch(e => {
+          console.error('failed to join', e);
+          next();
+        });
+    })
+    .catch(e => {
+      console.error('failed to run inital', e);
+      next();
+    });
+});
+
 // /api/highlights/covers
 annnotRouter.get('/highlights/covers', (req, res, next) => {
   db()
