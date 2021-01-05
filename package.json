@@ -8,7 +8,7 @@
     "start:dev": "npx webpack src/index.js -o ./public/bundle.js --watch & npx nodemon ./server/index.js -q"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "react-transition-group": "^4.2.2",
     "sequelize": "^5.15.0",
