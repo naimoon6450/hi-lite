@@ -48,7 +48,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "author": "",
   "license": "ISC"
